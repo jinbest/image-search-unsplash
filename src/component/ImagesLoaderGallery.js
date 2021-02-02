@@ -1,6 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Gallery from "react-photo-gallery";
 import PinedImage from "./PinedImage";
+import Button from '@material-ui/core/Button';
 
 const ImagesLoaderGallery = ({data, handlePinData, handleUnPinData}) => {
   const [photos, setPhotos] = useState([]);
@@ -73,9 +74,9 @@ const ImagesLoaderGallery = ({data, handlePinData, handleUnPinData}) => {
 
   return (
     <div>
-      <p>
-        <button onClick={toggleSelectAll}>{selectAll ? 'Unpin All' : 'Pin All'}</button>
-      </p>
+      {photos.length ? <Button variant="contained" color="primary" onClick={toggleSelectAll} style={{margin: '20px'}}>
+        {selectAll ? 'Unpin All' : 'Pin All'}
+      </Button> : undefined}
       <Gallery photos={photos} renderImage={imageRenderer} />
     </div>
   );

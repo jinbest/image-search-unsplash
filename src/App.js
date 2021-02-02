@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="project-title">Image-Search via Unsplash API</h1>
       <SearchComponent 
         color='rgba(0,0,0,0.8)' 
         bgcolor='white' 
